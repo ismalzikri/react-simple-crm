@@ -43,7 +43,7 @@ export default function TopBar({ showNav, setShowNav }: TopBarProps) {
               <ChevronDownIcon className="ml-2 h-4 w-4 text-gray-700" />
             </Menu.Button>
           </div>
-          <Transition
+          {/* <Transition
             as={Fragment}
             enter="transition ease-out duration-100"
             enterFrom="transform scale-95"
@@ -74,7 +74,7 @@ export default function TopBar({ showNav, setShowNav }: TopBarProps) {
                 </Menu.Item>
               </div>
             </Menu.Items>
-          </Transition>
+          </Transition> */}
         </Menu>
       </div>
     </div>

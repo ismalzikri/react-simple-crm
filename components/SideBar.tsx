@@ -23,8 +23,8 @@ const SideBar = forwardRef<HTMLDivElement, SideBarProps>(({ showNav }, ref) => {
           <div
             className={`pl-6 py-3 mx-5 rounded-lg text-center cursor-pointer mb-3 flex items-center transition-colors ${
               router.pathname == "/"
-                ? "bg-black text-white"
-                : "text-gray-400 hover:bg-black hover:text-white"
+                ? "bg-[#232b2b] text-white"
+                : "text-gray-400 hover:bg-[#232b2b] hover:text-white"
             }`}
           >
             <div className="mr-2">
@@ -39,8 +39,8 @@ const SideBar = forwardRef<HTMLDivElement, SideBarProps>(({ showNav }, ref) => {
           <div
             className={`pl-6 py-3 mx-5 rounded-lg text-center cursor-pointer mb-3 flex items-center transition-colors ${
               router.pathname == "/account"
-                ? "bg-black text-white"
-                : "text-gray-400 hover:bg-black hover:text-white"
+                ? "bg-[#232b2b] text-white"
+                : "text-gray-400 hover:bg-[#232b2b] hover:text-white"
             }`}
           >
             <div className="mr-2">
