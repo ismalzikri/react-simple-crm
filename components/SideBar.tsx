@@ -35,10 +35,10 @@ const SideBar = forwardRef<HTMLDivElement, SideBarProps>(({ showNav }, ref) => {
             </div>
           </div>
         </Link>
-        <Link href="/account">
+        <Link href="/clients">
           <div
             className={`pl-6 py-3 mx-5 rounded-lg text-center cursor-pointer mb-3 flex items-center transition-colors ${
-              router.pathname == "/account"
+              router.pathname == "/clients"
                 ? "bg-[#232b2b] text-white"
                 : "text-gray-400 hover:bg-[#232b2b] hover:text-white"
             }`}
