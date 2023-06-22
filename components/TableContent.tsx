@@ -6,7 +6,7 @@ type TableContentProps = {
   clients: Client[];
 };
 
-export const TableContent = ({ clients }: TableContentProps) => {
+export function TableContent({ clients }: TableContentProps) {
   const renderedClients = clients.map(
     ({ id, primary_person, company, assigne, status, date_created }) => {
       const { name, email } = primary_person;
@@ -96,4 +96,4 @@ export const TableContent = ({ clients }: TableContentProps) => {
       <tbody>{renderedClients}</tbody>
     </table>
   );
-};
+}

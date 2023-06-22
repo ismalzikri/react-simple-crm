@@ -5,12 +5,14 @@ import { TableContent } from "@/components/TableContent";
 import { getClientsFromLocalStorage } from "@/utils/localStorageUtils";
 
 import { PlusIcon, FunnelIcon } from "@heroicons/react/24/outline";
+import { DateFilter } from "@/components/DateFilter";
 
-export default function Account() {
+export default function Clients() {
   const [clients, setClients] = useState<Client[]>([]);
   const [isOpenPortal, setIsOpenPortal] = useState(false);
   const [filteredClients, setFilteredClients] = useState<Client[]>([]);
   const [selectedStatus, setSelectedStatus] = useState("");
+  const [selectedDate, setSelectedDate] = useState("");
 
   useEffect(() => {
     const storedClients = getClientsFromLocalStorage();
@@ -51,12 +53,30 @@ export default function Account() {
     setFilteredClients(filteredItems);
   };
 
+  const handleDateChange = (date: string) => {
+    setSelectedDate(date);
+    let filteredItems = clients;
+
+    if (date) {
+      filteredItems = filteredItems.filter(
+        (client) =>
+          new Date(client.date_created).toISOString().split("T")[0] === date
+      );
+    }
+
+    setFilteredClients(filteredItems);
+  };
+
   return (
     <section>
       <Search onSearch={handleSearch} />
       <div className="flex items-baseline justify-between">
         <p className="mt-8 text-gray-700 text-3xl mb-16 font-bold">Clients</p>
         <div className="relative flex gap-4 items-center">
+          <DateFilter
+            selectedDate={selectedDate}
+            onDateChange={handleDateChange}
+          />
           <button
             onClick={togglePortal}
             className="flex items-center gap-2 border border-black px-4 py-2.5 rounded-lg relative min-w-[7.3rem]"
